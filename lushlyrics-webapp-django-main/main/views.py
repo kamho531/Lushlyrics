@@ -15,7 +15,7 @@ f = open('card.json', 'r')
 CONTAINER = json.load(f)
 
 @login_required
-def login_required_default(request):
+def default(request):
     global CONTAINER
 
 
@@ -28,7 +28,7 @@ def login_required_default(request):
     return render(request, 'player.html',{'CONTAINER':CONTAINER, 'song':song})
 
 
-
+@login_required
 def playlist(request):
     cur_user = playlist_user.objects.get(username = request.user)
     try:
@@ -45,7 +45,7 @@ def playlist(request):
     # print(list(playlist_row)[0].song_title)
     return render(request, 'playlist.html', {'song':song,'user_playlist':user_playlist})
 
-
+@login_required
 def search(request):
   if request.method == 'POST':
 
@@ -63,7 +63,7 @@ def search(request):
 
 
 
-
+@login_required
 def add_playlist(request):
     cur_user = playlist_user.objects.get(username = request.user)
 

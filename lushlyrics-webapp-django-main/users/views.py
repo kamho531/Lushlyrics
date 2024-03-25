@@ -4,7 +4,9 @@ from django.contrib import messages
 from main.models import playlist_user
 from .forms import SignUpForm
 
+
 # Create your views here.
+
 
 def userlogin(request):
     user = playlist_user.objects.all()
