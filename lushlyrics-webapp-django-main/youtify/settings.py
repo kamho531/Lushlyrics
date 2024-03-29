@@ -130,7 +130,7 @@ STATICFILES_DIRS = [
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # setup SMTP parameters
-
+#EMAIL_BACKEND = 'digango.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mail")
 EMAIL_HOST = 'smtp.gmail.com'
